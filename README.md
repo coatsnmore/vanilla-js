@@ -3,8 +3,7 @@
 [Official Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ```bash
-npm install
-npm start
+npm install && npm start
 ```
 
 ## Features
