@@ -1,33 +1,22 @@
+import AnswerService from "./answerService.js";
+
 class MeaningOfLife extends HTMLElement {
     constructor() {
         super();
-        this.defaultAnswer = 42;
+        this.defaultAnswer = '42';
+        this.answerService = new AnswerService();
     }
 
-    async fetchFromServer() {
-        const response = await fetch("answer.json");
-        const json = await response.json();
-        const { answer } = json; 
-        return answer;
-    }
+    updateAnswer (answer) {
+        this.innerHTML = `<h2>The meaning of life is: ${answer}</h2>`;
+    };
 
     connectedCallback() {
-
-        if(this.getAttribute("dynamic")){
-            this.innerHTML = `
-                <h2>The meaning of life is: ${this.defaultAnswer}</h2>
-            `;
-            // flicker while fetching
-            this.fetchFromServer().then(a => {
-                console.log(`answer: ${a}`);
-                this.innerHTML = `
-                <h2>The meaning of life is: ${a}</h2>
-            `
-            });
+        if (this.getAttribute("dynamic")) {
+            this.answerService.fetchAnswerFromServer()
+                .then(a => {this.updateAnswer(a)});
         } else {
-            this.innerHTML = `
-                <h2>The meaning of life is: ${this.defaultAnswer}</h2>
-            `;
+            this.updateAnswer(this.defaultAnswer);
         }
     }
 }
