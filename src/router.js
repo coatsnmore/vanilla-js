@@ -12,7 +12,7 @@ class Router {
 
     loadContent(uri){
         
-        const contentUri = `${uri}.html`;
+        const contentUri = `${uri}/index.html`;
         
         fetch(contentUri)
             .then(r => r.text())
