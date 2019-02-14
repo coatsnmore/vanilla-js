@@ -7,17 +7,15 @@ class MeaningOfLife extends HTMLElement {
         this.answerService = new AnswerService();
     }
 
-    updateAnswer (answer) {
-        this.innerHTML = `<h2>The meaning of life is: ${answer}</h2>`;
+    updateAnswer(answer) {
+        this.innerHTML = `<h2>The meaning of life is ${answer}.</h2>`;
     };
 
     connectedCallback() {
-        if (this.getAttribute("dynamic")) {
+        this.getAttribute("dynamic") ?
             this.answerService.fetchAnswerFromServer()
-                .then(a => {this.updateAnswer(a)});
-        } else {
-            this.updateAnswer(this.defaultAnswer);
-        }
+                .then(a => { this.updateAnswer(a) })
+            : this.updateAnswer(this.defaultAnswer);
     }
 }
 
