@@ -8,6 +8,7 @@ npm install && npm start
 
 ## Features
 
+* one-way data binding
 * uri-based routing
 * custom web components
 * classes
