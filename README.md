@@ -11,6 +11,7 @@ npm install && npm start
 * offline capability
 * one-way data binding
 * uri-based routing
+* native app experience
 * custom web components
 * classes
 * module loading
@@ -21,4 +22,4 @@ npm install && npm start
 ## Reading Material
 
 * https://developers.google.com/web/fundamentals/primers/service-workers/
-* 
+* https://developers.google.com/web/fundamentals/web-components/shadowdom

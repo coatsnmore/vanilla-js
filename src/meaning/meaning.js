@@ -5,10 +5,11 @@ class MeaningOfLife extends HTMLElement {
         super();
         this.defaultAnswer = '42';
         this.answerService = new AnswerService();
+        this.attachShadow({mode: 'open'});
     }
 
     updateAnswer(answer) {
-        this.innerHTML = `<h2>The meaning of life is ${answer}.</h2>`;
+        this.shadowRoot.innerHTML = `<section>The meaning of life is ${answer}.</section>`;
     };
 
     connectedCallback() {

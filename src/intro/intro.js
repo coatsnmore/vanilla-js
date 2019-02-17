@@ -3,15 +3,26 @@ class Intro extends HTMLElement {
     constructor() {
         super();
         this.name = 'nick';
+        this.attachShadow({mode: 'open'});
     }
 
-    updateIntro() {
-        this.innerHTML = `
-            <label>Name
-                <input id="name" type="text" value="${this.name}" />
-            </label>
-            <h2>Hello, there, ${this.name}.</h2>
-            <h3>You must have come from faraway lands. Choose your reward wisely...</h3>
+    render() {
+        this.shadowRoot.innerHTML = `
+            <style>
+                section {
+                    background-color: lightblue;
+                }
+            </style>
+            <section>
+                <h1 id="journey-header">
+                    You have reached the end of your journey!
+                </h1>
+                <label><h3>What is your name, Traveller?</h3>
+                    <input id="name" type="text" value="${this.name}" />
+                    
+                </label>
+                <h3>Hello there, ${this.name}.  Choose your reward wisely...</h3>
+            </section>
         `;
     };
 
@@ -21,12 +32,12 @@ class Intro extends HTMLElement {
 
     update(){
         const ncIntro = document.querySelector('nc-intro');
-        ncIntro.updateIntro();
-        document.getElementById(`name`).onchange = ncIntro.updateName;
+        ncIntro.render();
+        this.shadowRoot.getElementById(`name`).onchange = ncIntro.updateName;
     }
 
     updateName(e) {
-        let ncIntro = document.querySelector('nc-intro');
+        const ncIntro = document.querySelector('nc-intro');
         ncIntro.name = e.target.value;
         ncIntro.update();
     }

@@ -1,7 +1,6 @@
 .button a {
-    background-color: #4CAF50;
+    background-color: lightcoral;
     border: none;
-    color: white;
     padding: 20px;
     text-align: center;
     text-decoration: none;
@@ -9,4 +8,8 @@
     font-size: 24px;
     margin: 4px 2px;
     border-radius: 25px;
+  }
+
+  h2 {
+    background-color: lightgreen;
   }

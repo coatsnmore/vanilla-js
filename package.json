@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --serveStatic src"
+    "start": "browser-sync start --server --serveStatic src",
+    "dev": "browser-sync start --server --serveStatic dev"
   },
   "repository": {
     "type": "git",
