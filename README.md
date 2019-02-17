@@ -17,3 +17,8 @@ npm install && npm start
 * string templates
 * async HTTP calls
 * DOM element retrieval
+
+## Reading Material
+
+* https://developers.google.com/web/fundamentals/primers/service-workers/
+* 
