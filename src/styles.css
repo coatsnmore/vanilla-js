@@ -1,5 +1,5 @@
 .button a {
-    background-color: lightcoral;
+    background-color: lightsalmon;
     border: none;
     padding: 20px;
     text-align: center;
@@ -10,6 +10,6 @@
     border-radius: 25px;
   }
 
-  h2 {
-    background-color: lightgreen;
+  section {
+      background-color: lightblue;
   }

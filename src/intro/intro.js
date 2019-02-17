@@ -2,7 +2,7 @@
 class Intro extends HTMLElement {
     constructor() {
         super();
-        this.name = 'nick';
+        this.name = 'Traveller';
         this.attachShadow({mode: 'open'});
     }
 
@@ -10,18 +10,19 @@ class Intro extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 section {
-                    background-color: lightblue;
+                    background-color: lightgrey;
                 }
             </style>
             <section>
                 <h1 id="journey-header">
                     You have reached the end of your journey!
                 </h1>
-                <label><h3>What is your name, Traveller?</h3>
+                <label>
+                    <p>What is your name, Traveller?</p>
                     <input id="name" type="text" value="${this.name}" />
-                    
                 </label>
-                <h3>Hello there, ${this.name}.  Choose your reward wisely...</h3>
+                <p>Hello there, <b>${this.name}.</b>  </p>
+                <p><em>Choose your reward wisely...</em></p>
             </section>
         `;
     };
