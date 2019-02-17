@@ -7,8 +7,13 @@ async function getSomeBooks() {
     const { books } = json;
 
     return books;
-};
+}
 
-getSomeBooks().then(books => console.log(`books: ${books}`));
+function showBooks(books){
+    const booksSection = document.querySelector('#books');
+    booksSection.innerHTML = `books: ${books}`;
+}
+
+getSomeBooks().then(books => showBooks(books));
 
 
