@@ -8,6 +8,7 @@ npm install && npm start
 
 ## Features
 
+* offline capability
 * one-way data binding
 * uri-based routing
 * custom web components
