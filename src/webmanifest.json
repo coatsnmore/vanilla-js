@@ -1,0 +1,15 @@
+{
+    "name": "coats-VanillaJS",
+    "short_name": "coats-vanilla",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A simple VanillaJS app.",
+    "icons": [
+      {
+        "src": "/images/vanillajs.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ]
+  }
