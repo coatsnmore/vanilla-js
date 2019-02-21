@@ -14,14 +14,17 @@ const authors = fetch('http://localhost:4000/authors')
 
 Promise.all([books, slowBooks, authors]).then(values  => {
     values[0].json().then(books => {
-        console.log(`books: ${JSON.stringify(books)}`);
+        console.log('\x1b[36m%s\x1b[0m', `books:`);
+        console.log(books);
     });
 
     values[1].json().then(books => {
-        console.log(`slow books: ${JSON.stringify(books)}`);
+        console.log('\x1b[36m%s\x1b[0m', `slow books:`);
+        console.log(books);
     });
 
     values[2].json().then(authors => {
-        console.log(`authors: ${JSON.stringify(authors)}`);
+        console.log('\x1b[36m%s\x1b[0m', `authors:`);
+        console.log(authors);
     });
 });
