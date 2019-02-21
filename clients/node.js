@@ -1,4 +1,6 @@
 const fetch = require('node-fetch');
+const port = 4000;
+const host = `http://localhost:${port}`;
 
 // fetch('http://localhost:4000/books')
 //     .then(promise => promise.json())
@@ -8,9 +10,9 @@ const fetch = require('node-fetch');
 //     .then(promise => promise.json())
 //     .then(json => console.log(`json: ${json}`));
 
-const books = fetch('http://localhost:4000/books')
-const slowBooks = fetch('http://localhost:4000/slow-books')
-const authors = fetch('http://localhost:4000/authors')
+const books = fetch(`${host}/books`)
+const slowBooks = fetch(`${host}/slow-books`)
+const authors = fetch(`${host}/authors`)
 
 Promise.all([books, slowBooks, authors]).then(values  => {
     values[0].json().then(books => {
