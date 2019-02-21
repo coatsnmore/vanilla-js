@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --serveStatic src",
-    "dev": "browser-sync start --server --serveStatic dev",
+    "start": "browser-sync start --server --serveStatic clients/web",
     "server": "nodemon server/server.js",
-    "client": "nodemon client.js"
+    "node-client": "nodemon clients/node.js"
   },
   "repository": {
     "type": "git",
@@ -16,13 +15,11 @@
   },
   "author": "coatsn",
   "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.3"
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "node-fetch": "^2.3.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "browser-sync": "^2.26.3"
   }
 }
