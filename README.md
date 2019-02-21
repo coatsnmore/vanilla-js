@@ -2,8 +2,21 @@
 
 [Official Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+`npm install` and then...
+
+Start browser client in dev mode
 ```bash
-npm install && npm start
+npm start
+```
+
+Start server in dev mode
+```
+npm run server
+```
+
+Start node client in dev mode
+```
+npm run node-client
 ```
 
 ## Features
