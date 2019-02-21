@@ -1,0 +1,13 @@
+{
+    "books":
+        [{
+            "title": "Truth",
+            "author": "Truth Seeker",
+            "comments": ["utter TRASH!!!", "WOOOOOWWW SOOO GOOOD", "So good. Read this in a day. Amazing insights into the nature of Reality."]
+        },
+        {
+            "title": "Evil",
+            "author": "Man",
+            "comments": ["A cherish resource.", "An uproarious collection of all our sins!"]
+        }]
+}

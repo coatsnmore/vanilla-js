@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server --serveStatic src",
-    "dev": "browser-sync start --server --serveStatic dev"
+    "dev": "browser-sync start --server --serveStatic dev",
+    "server": "nodemon server/server.js",
+    "client": "nodemon client.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.10"
   }
 }

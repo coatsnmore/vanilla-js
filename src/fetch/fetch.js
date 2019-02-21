@@ -4,7 +4,7 @@ console.log('fetching some books...');
 async function getSomeBooks() {
 
     // fetch returns promises
-    const response = await fetch("books.json");
+    const response = await fetch("http://localhost:4000/books");
     const json = await response.json();
 
     // destructuring to array from JSON
@@ -16,7 +16,7 @@ async function getSomeBooks() {
 
 function showBooks(books){
     const booksSection = document.querySelector('#books');
-    booksSection.innerHTML = `books: ${books}`;
+    booksSection.innerHTML = `books: ${JSON.stringify(books)}`;
 }
 
 getSomeBooks().then(books => showBooks(books));
