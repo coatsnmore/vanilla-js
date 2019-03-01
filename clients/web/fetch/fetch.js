@@ -16,7 +16,7 @@ async function getSomeBooks() {
 
 function showBooks(books){
     const booksSection = document.querySelector('#books');
-    booksSection.innerHTML = `books: ${JSON.stringify(books)}`;
+    booksSection.innerHTML = `<h2>Books:</h2><p>${JSON.stringify(books)}</p>`;
 }
 
 getSomeBooks().then(books => showBooks(books));
