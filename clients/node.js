@@ -2,9 +2,20 @@ const fetch = require('node-fetch');
 const port = 4000;
 const host = `http://localhost:${port}`;
 
-fetch(`${host}/books`)
-    .then(promise => promise.json())
-    .then(json => console.log(`json: ${JSON.stringify(json)}`));
+// fetch(`${host}/books`)
+//     .then(promise => promise.json())
+//     .then(json => console.log(`json: ${JSON.stringify(json)}`));
+
+async function getSomeBooks() {
+    const p = await fetch(`${host}/books`)
+    const json = await p.json();
+    const { books } = json;
+
+    return books;
+}
+
+getSomeBooks().then(books => console.log(`books: ${JSON.stringify(books)}`));
+
 
 // fetch('http://localhost:4000/slow-books')
 //     .then(promise => promise.json())
