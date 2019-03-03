@@ -6,20 +6,21 @@ const host = `http://localhost:${port}`;
 //     .then(promise => promise.json())
 //     .then(json => console.log(`json: ${JSON.stringify(json)}`));
 
+// return promise
 async function getSomeBooks() {
-    const p = await fetch(`${host}/books`)
+    const p = await fetch(`${host}/books`);
     const json = await p.json();
     const { books } = json;
 
+    //resolves promise with whatever is returned
     return books;
 }
 
-getSomeBooks().then(books => console.log(`books: ${JSON.stringify(books)}`));
-
+// getSomeBooks().then(books => console.log(`books: ${JSON.stringify(books)}`));
 
 // fetch('http://localhost:4000/slow-books')
 //     .then(promise => promise.json())
-//     .then(json => console.log(`json: ${json}`));
+//     .then(json => console.log(`slow books: ${json}`));
 
 // const books = fetch(`${host}/books`)
 // const slowBooks = fetch(`${host}/slow-books`)
