@@ -22,23 +22,23 @@ async function getSomeBooks() {
 //     .then(promise => promise.json())
 //     .then(json => console.log(`slow books: ${json}`));
 
-// const books = fetch(`${host}/books`)
-// const slowBooks = fetch(`${host}/slow-books`)
-// const authors = fetch(`${host}/authors`)
+const books = fetch(`${host}/books`)
+const slowBooks = fetch(`${host}/slow-books`)
+const authors = fetch(`${host}/authors`)
 
-// Promise.all([books, slowBooks, authors]).then(values  => {
-//     values[0].json().then(books => {
-//         console.log('\x1b[36m%s\x1b[0m', `books:`);
-//         console.log(books);
-//     });
+Promise.all([books, slowBooks, authors]).then(values  => {
+    values[0].json().then(books => {
+        console.log('\x1b[36m%s\x1b[0m', `books:`);
+        console.log(books);
+    });
 
-//     values[1].json().then(books => {
-//         console.log('\x1b[36m%s\x1b[0m', `slow books:`);
-//         console.log(books);
-//     });
+    values[1].json().then(slowBooks => {
+        console.log('\x1b[36m%s\x1b[0m', `slow books:`);
+        console.log(slowBooks);
+    });
 
-//     values[2].json().then(authors => {
-//         console.log('\x1b[36m%s\x1b[0m', `authors:`);
-//         console.log(authors);
-//     });
-// });
+    values[2].json().then(authors => {
+        console.log('\x1b[36m%s\x1b[0m', `authors:`);
+        console.log(authors);
+    });
+});
