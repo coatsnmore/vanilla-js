@@ -18,8 +18,8 @@ const host = `http://localhost:${port}`;
 
 // return promise
 async function getSomeBooks() {
-    const p = await fetch(`${host}/books`);
-    const json = await p.json();
+    const response = await fetch(`${host}/books`);
+    const json = await response.json();
     const { books } = json;
 
     //resolves promise with whatever is returned
@@ -29,8 +29,8 @@ async function getSomeBooks() {
 // getSomeBooks().then(books => console.log(`books: ${JSON.stringify(books)}`));
 
 async function getSlowBooks() {
-    const p = await fetch(`${host}/slow-books`);
-    const json = await p.json();
+    const response = await fetch(`${host}/slow-books`);
+    const json = await response.json();
     const { books } = json;
 
     //resolves promise with whatever is returned
