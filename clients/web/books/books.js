@@ -15,21 +15,28 @@ class Books extends HTMLElement {
                     background-color: lightgrey;
                 }
                 .book {
+                    margin: 2em;
+                    outline-style: solid;
                     background-color: lightskyblue;
+                    width: 50%;
                 }
             </style>`;
 
-        let html = `${style}<section><h1>Books:</h1>`;
+        let html = `${style}<section><h1>Books:</h1><hr>`;
 
         books.forEach(book => {
             html += `<div class="book">
-                    <h2>Title: ${book.author}</h2>
+                    <h2>Title: ${book.title}</h2>
                     <h4>Author: ${book.author}</h4>
-                    <h4>Comments: ${JSON.stringify(book.comments)}</h4>
-                </div>`;
+                    <h4>Comments:</h4>
+                    <ul>`
+            book.comments.forEach(comment => {
+                html += `<li>${comment}</li>`
+            });
+            html += `</ul></div>`;
         });
 
-        html+`</section>`;
+        html += `</section>`;
         this.shadowRoot.innerHTML = html;
     };
 
